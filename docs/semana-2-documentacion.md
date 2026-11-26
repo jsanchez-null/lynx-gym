@@ -21,7 +21,7 @@ Antes de iniciar con el código del backend de José Carlos, se definieron los s
 ## 2. Registro de avances
 
 ### 26 nov 2026 — Arranque del frontend con plantilla Expo Tabs (`app/`)
-- **Responsable:** José Carlos Sánchez Castro (con Antigravity).
+- **Responsable:** José Carlos Sánchez Castro.
 - **Qué se hizo:**
   - Se inicializó `app/` con la plantilla **Tabs** de Expo (`create-expo-app --template tabs`, con `expo-router` y TypeScript), pensada para probarse en **Expo Go** y contar con la barra de navegación inferior (*Bottom Tab Bar*) acorde a los diseños de referencia.
   - Se conservaron `app/README.md` y la estructura base de `app/src/`.
@@ -36,7 +36,7 @@ Antes de iniciar con el código del backend de José Carlos, se definieron los s
   - **DTOs (`backend/Api/Models/DTOs/`):** se crearon `ApiResponse.cs` (`{ ok, data, error }`), `PromoDto.cs`, `CheckInRequest.cs`, `AccesoDto.cs` y `VentasResumenDto.cs`.
 
 ### 26 nov 2026 — Base de `backend/Api` (ASP.NET Core 3 capas, Auth JWT, Middleware y Endpoints de José Carlos)
-- **Responsable:** José Carlos Sánchez Castro (con Antigravity).
+- **Responsable:** José Carlos Sánchez Castro.
 - **Qué se hizo:**
   - Se inicializó el proyecto ASP.NET Core Web API (`net10.0`) en `backend/Api/` con **Swagger** (`Swashbuckle.AspNetCore`), **JWT** (`Microsoft.AspNetCore.Authentication.JwtBearer`), **BCrypt** (`BCrypt.Net-Next`) y **SQL Server** (`Microsoft.Data.SqlClient`).
   - Se completaron los contratos compartidos en `Models/` y `Models/DTOs/` (`ApiResponse<T>.Success/Fail`, `AuthDtos.cs`, `UsuarioDtos.cs`, `MembresiaDtos.cs`).
