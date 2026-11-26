@@ -1,6 +1,6 @@
 # Lynx Gym
 
-App de gym ficticio — Equipo LYNXWARE (Paul Urías Sámano y José Carlos Sánchez Castro).
+App de gym ficticio — Equipo LYNXWARE (Paul Urías Sámano, José Carlos Sánchez Castro y Erika Daniela Verdugo Rodríguez).
 Materia: Programación de Dispositivos Móviles J303 — Ejercicio 19-20.
 
 La app controla la membresía de los socios con un código QR fijo, muestra el aforo,
