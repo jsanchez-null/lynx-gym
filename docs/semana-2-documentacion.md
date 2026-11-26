@@ -28,6 +28,13 @@ Antes de iniciar con el código del backend de José Carlos, se definieron los s
   - Se ajustó la configuración inicial en `app/package.json` y `app/app.json` (`name: "Lynx Gym"`, `slug: "lynx-gym"`, `scheme: "lynxgym"`).
   - Se mantuvo `node_modules/` ignorado por `.gitignore`.
 
+### 26 nov 2026 — Base de datos SQL Server, Models compartidos y DTOs de Paul (`backend/`)
+- **Responsable:** Paul Urías Sámano.
+- **Qué se hizo:**
+  - **Base de datos (`backend/Database/schema.sql`):** se organizó el script en `backend/Database/schema.sql` y se creó la base de datos **`LynxGym`** en `(localdb)\MSSQLLocalDB` (sin datos de prueba) con las 5 tablas y sus llaves foráneas: `Usuarios`, `Promos`, `Membresias`, `Accesos` y `Pagos`.
+  - **Models compartidos (`backend/Api/Models/`):** se crearon `Usuario.cs`, `Membresia.cs`, `Promo.cs`, `Acceso.cs` y `Pago.cs` siguiendo `docs/semana-2-models-dtos.md`.
+  - **DTOs (`backend/Api/Models/DTOs/`):** se crearon `ApiResponse.cs` (`{ ok, data, error }`), `PromoDto.cs`, `CheckInRequest.cs`, `AccesoDto.cs` y `VentasResumenDto.cs`.
+
 ---
 
 ## 3. Próximos pasos (Semana 2 — parte de José Carlos)
