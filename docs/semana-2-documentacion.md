@@ -63,5 +63,6 @@ Antes de iniciar con el código del backend de José Carlos, se definieron los s
 - [x] Implementar el `Middleware/` de errores estándar (`{ ok, data, error }`).
 - [x] Implementar `Auth/` (`POST /api/auth/login` con BCrypt, JWT a 24 h y control por roles).
 - [x] Implementar los endpoints de usuarios y membresías (`POST /api/usuarios`, `POST /api/admin/membresias`, `GET /api/membresias/mia`).
-- [ ] Probar los endpoints en Swagger (`dotnet run` dentro de `backend/Api`).
-- [ ] Conectar con las 5 tablas de SQL Server de Paul (`Database:UseSqlServer = true`) cuando queden creadas.
+- [x] Probar los endpoints en Swagger (`dotnet run` dentro de `backend/Api`). ✅ Funciona con repositorios en memoria.
+- [x] Conectar con las 5 tablas de SQL Server de Paul (`Database:UseSqlServer = true`). ✅ BD `LynxGym` en `(localdb)\MSSQLLocalDB` creada y verificada.
+- [x] Insertar datos de prueba en SQL Server (`backend/Database/seed.sql`): Admin Lynx, Recepcion Lynx y Alex Socio con hashes BCrypt.
