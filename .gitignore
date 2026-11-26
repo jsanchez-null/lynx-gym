@@ -1,0 +1,9 @@
+# Dependencias y archivos generados — no se suben al repo
+node_modules/
+.expo/
+dist/
+bin/
+obj/
+.vs/
+*.user
+appsettings.Development.json
