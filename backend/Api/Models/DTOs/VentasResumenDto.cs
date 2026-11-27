@@ -1,4 +1,4 @@
-namespace LynxGym.Api.Models.DTOs;
+namespace Api.Models.DTOs;
 
 public class VentasResumenDto
 {

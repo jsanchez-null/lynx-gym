@@ -72,17 +72,20 @@ if (useSqlServer)
 {
     builder.Services.AddScoped<IUsuarioRepository, SqlUsuarioRepository>();
     builder.Services.AddScoped<IMembresiaRepository, SqlMembresiaRepository>();
+    builder.Services.AddScoped<IPromoRepository, SqlPromoRepository>();
 }
 else
 {
     builder.Services.AddSingleton<IUsuarioRepository, InMemoryUsuarioRepository>();
     builder.Services.AddSingleton<IMembresiaRepository, InMemoryMembresiaRepository>();
+    builder.Services.AddSingleton<IPromoRepository, InMemoryPromoRepository>();
 }
 
 builder.Services.AddSingleton<JwtTokenService>();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<UsuarioService>();
 builder.Services.AddScoped<MembresiaService>();
+builder.Services.AddScoped<PromoService>();
 
 var app = builder.Build();
 

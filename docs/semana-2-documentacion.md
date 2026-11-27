@@ -34,6 +34,14 @@ Antes de iniciar con el código del backend de José Carlos, se definieron los s
   - **Base de datos (`backend/Database/schema.sql`):** se organizó el script en `backend/Database/schema.sql` y se creó la base de datos **`LynxGym`** en `(localdb)\MSSQLLocalDB` (sin datos de prueba) con las 5 tablas y sus llaves foráneas: `Usuarios`, `Promos`, `Membresias`, `Accesos` y `Pagos`.
   - **Models compartidos (`backend/Api/Models/`):** se crearon `Usuario.cs`, `Membresia.cs`, `Promo.cs`, `Acceso.cs` y `Pago.cs` siguiendo `docs/semana-2-models-dtos.md`.
   - **DTOs (`backend/Api/Models/DTOs/`):** se crearon `ApiResponse.cs` (`{ ok, data, error }`), `PromoDto.cs`, `CheckInRequest.cs`, `AccesoDto.cs` y `VentasResumenDto.cs`.
+  - **Consulta de promociones vigentes:** se completó `GET /api/promos` en las tres capas asignadas a la base de la API:
+    - `IPromoRepository` y `SqlPromoRepository` consultan las promociones vigentes en SQL Server por estado y rango de fechas.
+    - `InMemoryPromoRepository` permite probar el endpoint sin SQL Server.
+    - `PromoService` convierte las promociones al `PromoDto` compartido.
+    - `PromosController` devuelve `ApiResponse<IReadOnlyList<PromoDto>>` y requiere autenticación JWT.
+  - Se normalizaron los namespaces de `PromoDto`, `AccesoDto`, `CheckInRequest` y `VentasResumenDto` para usar los contratos compartidos `Api.Models.DTOs`.
+  - Se verificó que el backend compile correctamente con 0 errores y 0 advertencias.
+  - Se probó `POST /api/auth/login` y `GET /api/promos` en modo memoria; el segundo endpoint respondió correctamente con el formato `{ ok, data, error }`.
 
 ### 26 nov 2026 — Base de `backend/Api` (ASP.NET Core 3 capas, Auth JWT, Middleware y Endpoints de José Carlos)
 - **Responsable:** José Carlos Sánchez Castro.
@@ -63,6 +71,7 @@ Antes de iniciar con el código del backend de José Carlos, se definieron los s
 - [x] Implementar el `Middleware/` de errores estándar (`{ ok, data, error }`).
 - [x] Implementar `Auth/` (`POST /api/auth/login` con BCrypt, JWT a 24 h y control por roles).
 - [x] Implementar los endpoints de usuarios y membresías (`POST /api/usuarios`, `POST /api/admin/membresias`, `GET /api/membresias/mia`).
+- [x] Implementar `GET /api/promos` con consulta de promociones vigentes, repositorios SQL/memoria, servicio y controller.
 - [x] Probar los endpoints en Swagger (`dotnet run` dentro de `backend/Api`). ✅ Funciona con repositorios en memoria.
 - [x] Conectar con las 5 tablas de SQL Server de Paul (`Database:UseSqlServer = true`). ✅ BD `LynxGym` en `(localdb)\MSSQLLocalDB` creada y verificada.
 - [x] Insertar datos de prueba en SQL Server (`backend/Database/seed.sql`): Admin Lynx, Recepcion Lynx y Alex Socio con hashes BCrypt.
